@@ -1,0 +1,24 @@
+# Spring properties
+spring:
+  application:
+     name: zuul-server
+
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    main-service:
+      path: /**
+      serviceId: main-service
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+  instance:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.int}}
+      
+# HTTP Server
+server:
+  port: 8765   # HTTP (Tomcat) port
