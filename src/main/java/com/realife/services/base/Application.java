@@ -1,4 +1,4 @@
-package com.realife.services.realife_zuul_server.base;
+package com.realife.services.base;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
